@@ -27,4 +27,23 @@ Things you may want to cover:
 
 ## usersテーブル
 
-| Colum
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+
+### Association
+
+- has_many :photos
+
+# photosテーブル
+
+| Column   | Type       | Options     |
+| -------- | ---------- | ----------- |
+| title    | string     | null: false |
+| text     | text       | null: false |
+| date     | date       | null: false |
+| user     | references | null: false |
+
+### Association
+
+- belongs_to user
