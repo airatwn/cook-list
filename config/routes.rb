@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root to: "photos#index"
+  root to: "photo#index"
 end
