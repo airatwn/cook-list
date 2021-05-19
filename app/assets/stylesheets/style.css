@@ -74,12 +74,17 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #ffffff;
+  border: 1px #ffffff solid;
+  border-radius: 3px;
   text-decoration: none;
   user-select: none;
+  
+  
 }
 .nav__logout:hover{
   opacity: 0.5;
+  background: #000000;
 }
 
 /* フォーム周り */

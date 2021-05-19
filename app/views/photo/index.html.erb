@@ -25,6 +25,7 @@
               <%="#{current_user.nickname}"%>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <%= link_to "New Proto", root_path, class: :nav__btn %>
+              <%= link_to "Lists", root_path,class: :nav__btn %>
             </div>
           <% else %> 
           <%# // ログインしているときは上記を表示するようにしましょう %>
