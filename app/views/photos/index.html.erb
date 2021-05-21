@@ -24,7 +24,7 @@
             <div class="nav__right"> 
               <%="#{current_user.nickname}"%>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "New Proto", new_photo_path, class: :nav__btn %>
+              <%= link_to "New Photo", new_photo_path, class: :nav__btn %>
               <%= link_to "Lists", root_path,class: :nav__btn %>
             </div>
           <% else %> 
@@ -39,6 +39,39 @@
           <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
+<style type="text/css">
+#photo {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#photo img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+</style>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    var setImg = '#photo';
+    var fadeSpeed = 1600;
+    var switchDelay = 5000;
+
+    $(setImg).children('img').css({opacity:'0'});
+    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+    setInterval(function(){
+        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+    },switchDelay);
+});
+</script>
     </header>
     <h1>Lists</h1>
      <div class="contents">
@@ -46,9 +79,13 @@
           <textarea type="text" placeholder="#" class="lists-form"></textarea>
         </form>
       </div>
+      <div id="photo">
+        <img src="mobo.jpeg" width="500" height="300" alt="">
+     </div>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">Copyright © Cook Lists All rights reserved.</p>
     </footer>
   </body>
 </html>
+

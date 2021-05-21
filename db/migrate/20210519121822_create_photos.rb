@@ -4,7 +4,7 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.string :title,    null: false
       t.text   :text,     null: false
       t.date   :date,     null: false
-      t.references :user, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
