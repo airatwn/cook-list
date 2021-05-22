@@ -1,0 +1,18 @@
+<h1>投稿一覧ページ</h1>
+
+<% @photos.each do |photo| %>
+  <div class="photo">
+    <div class="photo-title">
+      <%= photo.title %>
+    </div>
+    <div class="photo-date">
+      <%= photo.date %>
+    </div>
+    <div class="photo-text">
+      <%= photo.text %>
+    </div>
+    <div class="photo-image">
+      <%= photo.image %>
+     <%# <%= image_tag photo.image, class: 'photo-image' if photo.image.attached? %>
+  </div>
+<% end %>
