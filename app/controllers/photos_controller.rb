@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
     Photo.create(photo_params) #createメソッドの引数に使用して、photosテーブルへ保存できるよう
     @photo = Photo.new(photo_params)
     if @photo.save
-      redirect_to photo_path
+      redirect_to root_path
     else
       render :new
     end
