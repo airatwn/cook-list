@@ -1,0 +1,27 @@
+<h1>投稿編集ページ</h1>
+<div class="contents row">
+  <div class="container">
+    <h3>投稿を修正</h3>
+    <%="#{current_user.nickname}"%>
+    <%= form_with(model: @photo, url: photos_path, local: true) do |form| %>
+      <div class="field">
+        <%= form.text_field :title, placeholder: "Title" %>
+     </div>
+      
+      <div class="field">
+      <%= form.date_field :date, placeholder: "Date" %>
+      </div>
+
+      <div class="field">
+      <%= form.file_field :image, placeholder: "Image Url" %>
+      </div>
+
+      <div class="field">
+      <%= form.text_area :text, placeholder: "Text", rows: "20", cols: "200" %>
+      </div>
+      <%= form.submit "更新" %>
+      <%= form.submit "🙅‍♂️ " %>
+    <% end %>
+  </div>
+</div>
+

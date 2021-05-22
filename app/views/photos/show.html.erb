@@ -14,5 +14,14 @@
     <div class="photo-image">
       <%= photo.image %>
      <%# <%= image_tag photo.image, class: 'photo-image' if photo.image.attached? %>
+    </div>
+    <ul class="more_list">
+      <li>
+       <%= link_to '編集', edit_photo_path(photo.id), method: :get %>
+      </li>
+            <li>
+       <%= link_to '削除', photo_path(photo.id), method: :delete %>
+      </li>
+    </ul>
   </div>
 <% end %>

@@ -19,7 +19,26 @@ class PhotosController < ApplicationController
 
   def show
     @photos = Photo.all
-    # @photo = Photo.find(params[:id])
+  end
+  
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    photo = Photo.find(params[:id])
+    photo.update(photo_params)
+    if photo.update
+      redirect_to photo_path(photo.id), method: :get
+    end
+  end
+
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
+    if photo.destroy
+      redirect_to root_path
+    end
   end
 
   private
