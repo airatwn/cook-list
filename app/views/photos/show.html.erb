@@ -1,9 +1,29 @@
-<h1>投稿一覧ページ</h1>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+    <h1>Cook Lists</h1>
+    </header>
+  </body>
 
 <% @photos.each do |photo| %>
   <div class="photo">
     <div class="photo-title">
       <%= photo.title %>
+      <div class="more_list">
+       <%= link_to '編集', edit_photo_path(photo.id), method: :get %>
+       <%= link_to '削除', photo_path(photo.id), method: :delete %>
+      </div>
     </div>
     <div class="photo-date">
       <%= photo.date %>
@@ -15,13 +35,8 @@
       <%= photo.image %>
      <%# <%= image_tag photo.image, class: 'photo-image' if photo.image.attached? %>
     </div>
-    <ul class="more_list">
-      <li>
-       <%= link_to '編集', edit_photo_path(photo.id), method: :get %>
-      </li>
-            <li>
-       <%= link_to '削除', photo_path(photo.id), method: :delete %>
-      </li>
-    </ul>
+
   </div>
 <% end %>
+
+</html>

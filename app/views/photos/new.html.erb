@@ -12,14 +12,13 @@
       </div>
 
       <div class="field">
-      <%= form.file_field :image, placeholder: "Image Url" %>
+      <%= form.file_field :image, id:"photo-image" %>
       </div>
 
       <div class="field">
       <%= form.text_area :text, placeholder: "Text", rows: "20", cols: "200" %>
       </div>
       <%= form.submit "SEND" %>
-      <%= form.submit "🙅‍♂️ " %>
     <% end %>
   </div>
 </div>

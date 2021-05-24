@@ -39,49 +39,19 @@
           <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
-<style type="text/css">
-#photo {
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
-    text-align: left;
-    overflow: hidden;
-    position: relative;
-}
-
-#photo img {
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-</style>
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-$(function(){
-    var setImg = '#photo';
-    var fadeSpeed = 1600;
-    var switchDelay = 5000;
-
-    $(setImg).children('img').css({opacity:'0'});
-    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
-
-    setInterval(function(){
-        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
-    },switchDelay);
-});
-</script>
     </header>
+
     <h1>Lists</h1>
      <div class="contents">
         <form class="contents-form">
           <textarea type="text" placeholder="#" class="lists-form"></textarea>
         </form>
+
+       <div class="memo">
+       </div>
       </div>
-      <div id="photo">
-        <img src="mobo.jpeg" width="500" height="300" alt="">
-     </div>
+
+      <%# <%= image_tag photo.image, class: 'photo-image'if photo.image.attached? %> 
     <%= yield %>
     <footer class="footer">
       <p class="copyright">Copyright © Cook Lists All rights reserved.</p>
