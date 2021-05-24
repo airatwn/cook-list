@@ -46,6 +46,7 @@
         <input class="form-submit" type="submit" value="送信">
       </div>
     <h1>Lists</h1>
+    <%= form_with model: @messages, class: 'form', local: true do |f| %>
      <div class="contents">
         <form class="contents-form">
           <textarea type="text" placeholder="#" class="lists-form"></textarea>
@@ -54,6 +55,7 @@
         <div class="memo">
         </div>
       </div>
+    <% end %>
 
 
       <%# <%= image_tag photo.image, class: 'photo-image'if photo.image.attached? %> 
