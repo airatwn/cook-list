@@ -42,20 +42,20 @@
     </header>
 
 
+    <h1>MEMO Lists</h1>
+    <%= form_with model: @message, class: 'form', local: true do |f| %>
+      <div class="contents">
+        <form class="contents-form">
+          <%= f.text_area :memo, placeholder="#", class:"lists-form" %>
+        </form>
+      </div>
       <div class="form_btn">
         <input class="form-submit" type="submit" value="送信">
       </div>
-    <h1>MEMO Lists</h1>
-    <%= form_with model: @messages, class: 'form', local: true do |f| 
-     <div class="contents">
-        <form class="contents-form">
-          <textarea type="text" placeholder="#" class="lists-form"></textarea>
-        </form>
         
         <div class="memo">
         </div>
-      </div>
-    <% end %> 
+    <% end %>
 
 
       <%# <%= image_tag photo.image, class: 'photo-image'if photo.image.attached? %> 
