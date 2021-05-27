@@ -101,7 +101,7 @@ a {
 }
 
 .memo {
-  width: 900px;
+  width: 1500px;
   height: 500px;
   background-color: rgb(219, 230, 227);
   font-size: large;
@@ -109,6 +109,7 @@ a {
 
 .contents {
   display: flex;
+  width: 1450px;
 }
 
 /* フォーム周り */

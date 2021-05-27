@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   def index
+    @photos = Photo.all
   end
 
   def new
@@ -7,7 +8,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # Photo.create(photo_params) #createメソッドの引数に使用して、photosテーブルへ保存できるよう
     @photo = Photo.new(photo_params)
     if @photo.save
       redirect_to root_path
@@ -27,7 +27,7 @@ class PhotosController < ApplicationController
   def update
     photo = Photo.find(params[:id])
     photo.update(photo_params)
-    if photo.update
+    if photo.update(photo_params)
       redirect_to photo_path(photo.id), method: :get
     end
   end

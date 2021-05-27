@@ -12,9 +12,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def new
+    @message = Message.new
+  end
+
   private
 
   def message_params
-    params.permit(:memo).merge(user_id: current_user.id)
+    params.require(:message).permit(:memo).merge(user_id: current_user.id)
   end
 end
