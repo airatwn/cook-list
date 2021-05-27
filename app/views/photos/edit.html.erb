@@ -3,7 +3,7 @@
   <div class="container">
     <h3>投稿を修正</h3>
     <%="#{current_user.nickname}"%>
-    <%= form_with(model: @photo, url: photos_path, local: true) do |form| %>
+    <%= form_with(model: @photo, url: photo_path(@photo.id), local: true) do |form| %>
       <div class="field">
         <%= form.text_field :title, placeholder: "Title" %>
      </div>
@@ -20,7 +20,6 @@
       <%= form.text_area :text, placeholder: "Text", rows: "20", cols: "200" %>
       </div>
       <%= form.submit "更新" %>
-      <%= form.submit "🙅‍♂️ " %>
     <% end %>
   </div>
 </div>
