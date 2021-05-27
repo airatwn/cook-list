@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photos = Photo.all
+    @photos = Photo.all.order('created_at DESC')
   end
   
   def edit
