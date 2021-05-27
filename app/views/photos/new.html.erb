@@ -2,7 +2,7 @@
   <div class="container">
     <h3>投稿を作成</h3>
     <%="#{current_user.nickname}"%>
-    <%= form_with(model: @photo, url: photos_path, local: true) do |form| %>
+    <%= form_with(model: @photo, url: {controller: 'photos', action: 'update' }, local: true) do |form| %>
       <div class="field">
         <%= form.text_field :title, placeholder: "Title" %>
      </div>
