@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
   def show
     @photos = Photo.all.order('created_at DESC')
   end
-  
+
   def edit
     @photo = Photo.find(params[:id])
   end
@@ -27,17 +27,13 @@ class PhotosController < ApplicationController
   def update
     photo = Photo.find(params[:id])
     photo.update(photo_params)
-    if photo.update(photo_params)
-      redirect_to photo_path(photo.id), method: :get
-    end
+    redirect_to photo_path(photo.id), method: :get if photo.update(photo_params)
   end
 
   def destroy
     photo = Photo.find(params[:id])
     photo.destroy
-    if photo.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if photo.destroy
   end
 
   private

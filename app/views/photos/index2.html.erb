@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProtoSpace</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+          <h1>Cook Lists</h1>
+            <%# <%= link_to image_tag("logo.png", class: :logo), root_path %> 
+          </div>
+          <%# ログインしているときは以下を表示するようにしましょう %>
+          <% if user_signed_in? %>
+       
+            <div class="nav__right"> 
+              <%="#{current_user.nickname}"%>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to "New Photo", new_photo_path, class: :nav__btn %>
+              <%= link_to "投稿一覧", photo_path(@photos.ids), class: :nav__btn %>
+            </div>
+          <% else %> 
+          <%# // ログインしているときは上記を表示するようにしましょう %>
+          <%# ログインしていないときは以下を表示するようにしましょう %>
+            <div class="nav__right">
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+              <%= link_to "投稿一覧", photo_path(@photos.ids),class: :nav__btn %>
+            </div>
+          <% end %>
+          <%# // ログインしていないときは上記を表示するようにしましょう %>
+        </div>
+      </div>
+    </header>
+
+
+    <h1>MEMO Lists</h1>
+    <%= form_with model: @message, url: messages_path, class: 'form', local: true do |f| %>
+      <div class="contents">
+        <form class="contents-form">
+          <%= f.text_area :memo, placeholder:"#", class:"lists-form" %>
+        <div class="memo">
+        </div>
+        </form>
+      </div>
+      <div class="form_btn">
+      <%= f.submit "送信", class:"form-submit"%>
+      </div>
+    <% end %>
+
+
+      <%# <%= image_tag photo.image, class: 'photo-image'if photo.image.attached? %> 
+    <%= yield %>
+    <footer class="footer">
+      <p class="copyright">Copyright © Cook Lists All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+

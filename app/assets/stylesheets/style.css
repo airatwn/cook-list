@@ -112,6 +112,24 @@ a {
   width: 1450px;
 }
 
+.form-submit{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #ffffff solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background-color:#f6e826;;
+}
+
+.form-submit:hover{
+  opacity: 0.5;
+  background: #000000;
+}
+
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
