@@ -11,7 +11,7 @@ SNSは様々なジャンルが閲覧することができますが、興味の�
 
 # DEMO
 トップページ
-[![トップページ.gif](../../assets/トップページ.gif)
+![demo](https://gyazo.com/https://gyazo.com/2c70b71dcade833d88a40f7e6124bbb3/raw)
 
 投稿一覧画面
 [![投稿一覧.gif](../../assets/投稿一覧.gif)
