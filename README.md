@@ -11,9 +11,10 @@ SNSは様々なジャンルが閲覧することができますが、興味の�
 
 # DEMO
 トップページ
-![demo](https://gyazo.com/https://gyazo.com/2c70b71dcade833d88a40f7e6124bbb3/raw)
+[![Image from Gyazo](https://i.gyazo.com/2c70b71dcade833d88a40f7e6124bbb3.gif)](https://gyazo.com/2c70b71dcade833d88a40f7e6124bbb3)
 
 投稿一覧画面
+[![Image from Gyazo](https://i.gyazo.com/0b446b836bcfe0e3de44d00b0ee00e36.gif)](https://gyazo.com/0b446b836bcfe0e3de44d00b0ee00e36)
 [![投稿一覧.gif](../../assets/投稿一覧.gif)
 
 # 実装予定の内容
